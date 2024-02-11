@@ -21,7 +21,7 @@ const screen = {
 
         let repositoriesItens = ''
         user.repositories.forEach(repo => repositoriesItens += `<li><a href="${repo.html_url}" target="_blank"><span class="repo-name">${repo.name}</span>
-        <div style="margin-top:15px"><span class="infos-repo">🍴${repo.forks_count}</span><span class="infos-repo">⭐${repo.watchers_count}</span><span class="infos-repo">👀${repo.language}</span><span class="infos-repo">👩‍💻${repo.stargazers_count}</span></div></a></li>`)
+        <div style="margin-top:15px"><span class="infos-repo">🍴${repo.forks_count}</span><span class="infos-repo">⭐${repo.stargazers_count}</span><span class="infos-repo">👀${repo.watchers_count}</span><span class="infos-repo">👩‍💻${repo.language}</span></div></a></li>`)
 
         if (user.repositories.length > 0) {
             this.userProfile.innerHTML += `<div class="repositories section">
@@ -29,7 +29,6 @@ const screen = {
                                            <ul>${repositoriesItens}</ul>
                                            </div> `
         }
-        console.log(user.repositories)
 
         let eventsItens = ''
         if (user.events.length === 0) {
@@ -48,7 +47,6 @@ const screen = {
             })
         }
 
-
         this.userProfile.innerHTML += `<div>
                                             <h3 style=" font-weight: 700; color: #3A3B3E">Eventos</h3>
                                             <ul style="font-size: 12px">${eventsItens}</ul>
@@ -59,8 +57,6 @@ const screen = {
         this.userProfile.innerHTML = " <h3>Usuário não encontrado</h3>"
     }
 }
-
-
 
 export { screen }
 
